@@ -1,8 +1,7 @@
 ---
 const links = [
-  { href: '/#about', label: 'About' },
+  { href: '/', label: 'Home' },
   { href: '/our-work', label: 'Our Work' },
-  { href: '/#partnerships', label: 'Partnerships' },
   { href: '/partner', label: 'Partner With Us' },
   { href: '/contact', label: 'Contact' },
 ];
@@ -13,20 +12,115 @@ const links = [
     New Castle International Corp.
     <span>Est. 2014 · Wilmington, Delaware</span>
   </a>
-  <ul class="nav-links">
+  <ul class="nav-links" id="nav-links">
     {links.map(link => (
       <li><a href={link.href}>{link.label}</a></li>
     ))}
   </ul>
+  <button class="nav-toggle" id="nav-toggle" aria-label="Menu">☰</button>
 </nav>
 
+<script>
+  const toggle = document.getElementById('nav-toggle');
+  const links = document.getElementById('nav-links');
+  toggle?.addEventListener('click', () => {
+    links?.classList.toggle('open');
+    toggle.textContent = links?.classList.contains('open') ? '✕' : '☰';
+  });
+</script>
+
 <style>
-  nav{background:var(--navy);padding:0 48px;display:flex;justify-content:space-between;align-items:center;height:64px;position:sticky;top:0;z-index:100;border-bottom:2px solid var(--gold)}
-  .nav-logo{font-family:'Georgia',serif;font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--offwhite);font-weight:normal;text-decoration:none;flex-shrink:0}
-  .nav-logo span{color:var(--gold);display:block;font-size:10px;letter-spacing:.25em;margin-top:2px}
-  .nav-links{display:flex;gap:32px;list-style:none}
-  .nav-links a{color:#CBD5E0;text-decoration:none;font-family:'Arial',sans-serif;font-size:11px;letter-spacing:.15em;text-transform:uppercase;transition:color .2s}
-  .nav-links a:hover{color:var(--gold)}
-  @media(max-width:900px){nav{padding:0 24px}.nav-links{gap:20px}}
-  @media(max-width:768px){.nav-links{display:none}}
+nav {
+  background: var(--navy);
+  padding: 0 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 64px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 2px solid var(--gold);
+}
+
+.nav-logo {
+  font-family: 'Georgia', serif;
+  font-size: 12px;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: var(--offwhite);
+  text-decoration: none;
+  flex-shrink: 0;
+  line-height: 1.2;
+}
+
+.nav-logo span {
+  color: var(--gold);
+  display: block;
+  font-size: 9px;
+  letter-spacing: .2em;
+  margin-top: 2px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+}
+
+.nav-links a {
+  color: #CBD5E0;
+  text-decoration: none;
+  font-family: 'Arial', sans-serif;
+  font-size: 11px;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  transition: color .2s;
+}
+
+.nav-links a:hover { color: var(--gold); }
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  font-size: 18px;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    background: var(--navy);
+    flex-direction: column;
+    gap: 0;
+    border-top: 1px solid var(--gold);
+    z-index: 99;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links li a {
+    display: block;
+    padding: 18px 24px;
+    border-bottom: 1px solid rgba(201,168,76,.2);
+    font-size: 13px;
+  }
+
+  .nav-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
 </style>

@@ -100,11 +100,24 @@ import Footer from '../components/Footer.astro';
     </div>
   </section>
 
+  <section class="photo-band">
+    <div class="pb-label">2014–2016 · Delaware–China Economic Summit</div>
+    <div class="pb-grid">
+      <a href="/our-work"><img src="/images/gallery/boardroom-full.jpg" alt="Boardroom session" /></a>
+      <a href="/our-work"><img src="/images/gallery/meeting-trio.jpg" alt="Delegation meeting" /></a>
+      <a href="/our-work"><img src="/images/gallery/delegation-dinner.jpg" alt="Delegation dinner" /></a>
+      <a href="/our-work"><img src="/images/gallery/gift-exchange-group.jpg" alt="Gift exchange" /></a>
+      <a href="/our-work"><img src="/images/gallery/winson-gordons-office.jpg" alt="County Executive office" /></a>
+      <a href="/our-work"><img src="/images/gallery/agreement-signing.jpg" alt="Agreement signing" /></a>
+    </div>
+    <a href="/our-work" class="pb-cta">View Full Case Study →</a>
+  </section>
+
   <Footer />
 </Base>
 
 <style>
-.hero{background:var(--navy);color:var(--offwhite);padding:96px 48px 80px;position:relative;overflow:hidden}
+.hero{background:url("/images/wilmington-waterfront.png") center/cover no-repeat;;color:var(--offwhite);padding:96px 48px 80px;position:relative;overflow:hidden}
 .hero::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(201,168,76,.06) 0%,transparent 60%);pointer-events:none}
 .hero-inner{max-width:900px;margin:0 auto;position:relative;z-index:1}
 .hero-eyebrow{font-family:'Arial',sans-serif;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:24px;display:flex;align-items:center;gap:12px}
@@ -158,4 +171,15 @@ import Footer from '../components/Footer.astro';
 .wi p{font-family:'Arial',sans-serif;font-size:13px;color:#94A3B8;line-height:1.7}
 @media(max-width:900px){.pillars,.history-grid,.city-cards,.why-grid{grid-template-columns:1fr}.history-grid{gap:48px}}
 @media(max-width:768px){.hero{padding:64px 24px}.hero-stats{gap:28px}}
+</style>
+
+<style>
+.photo-band{background:var(--navy);padding:48px 0;text-align:center}
+.pb-label{font-family:'Arial',sans-serif;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:24px}
+.pb-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:2px;margin-bottom:24px}
+.pb-grid a{display:block;overflow:hidden}
+.pb-grid img{width:100%;height:160px;object-fit:cover;display:block;transition:opacity .2s}
+.pb-grid img:hover{opacity:.8}
+.pb-cta{font-family:'Arial',sans-serif;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:2px}
+@media(max-width:768px){.pb-grid{grid-template-columns:repeat(3,1fr)}.pb-grid img{height:100px}}
 </style>
