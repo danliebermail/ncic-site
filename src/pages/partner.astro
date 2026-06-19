@@ -1,0 +1,239 @@
+---
+import Base from '../layouts/Base.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Base title="Partner With Us — New Castle International Corp." description="NCIC facilitates international economic partnerships for cities, counties, and institutions across the Mid-Atlantic region. Express your interest here.">
+  <Nav />
+
+  <section class="partner-hero">
+    <div class="container">
+      <div class="section-label">International Partnership Development</div>
+      <h1>Your Community.<br>The World's <em>Opportunity.</em></h1>
+      <p class="sub">NCIC has built a proven model for developing international economic and cultural partnerships between local governments and global cities. We now offer this capability to municipalities, counties, educational institutions, and economic development authorities across the Mid-Atlantic region.</p>
+    </div>
+  </section>
+
+  <!-- WHAT WE OFFER -->
+  <section class="offer">
+    <div class="container">
+      <div class="section-label">What We Offer</div>
+      <h2>A Full-Service Partnership<br>Development Model</h2>
+      <p class="intro">We do the work that governments can't do on their own — building authentic international relationships and converting them into formal bilateral agreements, trade missions, and sustainable economic exchange programs.</p>
+
+      <div class="offer-grid">
+        <div class="offer-item">
+          <div class="offer-icon">◈</div>
+          <h3>Sister City & Friendship City Arrangements</h3>
+          <p>NCIC facilitates the full arc of a sister city relationship — from initial international introduction through formal government-to-government agreement. We handle cultural liaison, translation, protocol, and negotiation.</p>
+        </div>
+        <div class="offer-item">
+          <div class="offer-icon">◈</div>
+          <h3>Trade Mission Development</h3>
+          <p>We organize and lead trade missions — coordinating delegation travel, business symposia, factory and institutional tours, and introductions to corporate partners in target markets.</p>
+        </div>
+        <div class="offer-item">
+          <div class="offer-icon">◈</div>
+          <h3>International Investment Attraction</h3>
+          <p>We connect international companies and investors with local economic development opportunities — industrial sites, port infrastructure, technology corridors, and business incentive programs.</p>
+        </div>
+        <div class="offer-item">
+          <div class="offer-icon">◈</div>
+          <h3>Education & Cultural Exchange Programs</h3>
+          <p>We design and operate student exchange programs, curriculum partnerships, and cultural initiatives between local institutions and international partner cities — creating lasting people-to-people connections.</p>
+        </div>
+        <div class="offer-item">
+          <div class="offer-icon">◈</div>
+          <h3>Memoranda of Understanding</h3>
+          <p>We draft, negotiate, and facilitate the signing of MOUs between local governments and international counterparts — creating the formal framework for sustained bilateral cooperation.</p>
+        </div>
+        <div class="offer-item">
+          <div class="offer-icon">◈</div>
+          <h3>Cross-Cultural Business Brokerage</h3>
+          <p>We match local businesses, institutions, and land owners with international partners — serving as the trusted intermediary who understands both sides of the cultural and commercial equation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REGION MAP -->
+  <section class="region">
+    <div class="container region-inner">
+      <div class="region-text">
+        <div class="section-label" style="color:var(--gold)">Our Service Area</div>
+        <h2>The Mid-Atlantic<br>Corridor</h2>
+        <p>NCIC is based in New Castle County, Delaware and serves municipalities, counties, and institutions throughout the Mid-Atlantic region — one of the most economically significant corridors in the United States.</p>
+        <div class="region-cities">
+          <div class="region-city"><span>●</span> New Castle County, DE</div>
+          <div class="region-city"><span>●</span> City of Wilmington, DE</div>
+          <div class="region-city"><span>●</span> Philadelphia, PA</div>
+          <div class="region-city"><span>●</span> Baltimore, MD</div>
+          <div class="region-city"><span>●</span> Chester County, PA</div>
+          <div class="region-city"><span>●</span> Delaware County, PA</div>
+          <div class="region-city"><span>●</span> Northern Virginia</div>
+          <div class="region-city"><span>●</span> Washington D.C. Metro</div>
+        </div>
+        <p class="region-note">International partnerships available globally, with established relationships in China, Southeast Asia, and active development in additional markets.</p>
+      </div>
+      <div class="region-image">
+        <img src="/images/world-map.png" alt="Global reach — Delaware to China" />
+        <div class="img-caption">Established corridor: Mid-Atlantic United States ↔ Northeast China</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPRESSION OF INTEREST FORM -->
+  <section class="eoi">
+    <div class="container eoi-inner">
+      <div class="eoi-left">
+        <div class="section-label">Express Interest</div>
+        <h2>Start the Conversation</h2>
+        <p>Whether you represent a city, county, port authority, school district, university, or economic development agency — we'd like to hear about your international ambitions.</p>
+        <p>This form is the first step. There is no obligation. We review all submissions and respond within five business days.</p>
+
+        <div class="eoi-types">
+          <div class="eoi-type-label">We work with:</div>
+          <div class="eoi-type">City & County Governments</div>
+          <div class="eoi-type">Port & Economic Development Authorities</div>
+          <div class="eoi-type">Universities & School Districts</div>
+          <div class="eoi-type">Chambers of Commerce</div>
+          <div class="eoi-type">Private Companies Seeking Market Entry</div>
+          <div class="eoi-type">International Cities Seeking US Partners</div>
+        </div>
+      </div>
+
+      <form class="eoi-form" method="POST" action="/api/partner">
+        <div class="form-section-title">Your Organization</div>
+        <div class="form-row">
+          <div class="field">
+            <label for="fname">First Name</label>
+            <input type="text" id="fname" name="firstName" required />
+          </div>
+          <div class="field">
+            <label for="lname">Last Name</label>
+            <input type="text" id="lname" name="lastName" required />
+          </div>
+        </div>
+        <div class="field">
+          <label for="title">Your Title / Role</label>
+          <input type="text" id="title" name="title" placeholder="e.g. Mayor, Economic Development Director, Superintendent" />
+        </div>
+        <div class="field">
+          <label for="org">Organization Name</label>
+          <input type="text" id="org" name="organization" required />
+        </div>
+        <div class="field">
+          <label for="org-type">Organization Type</label>
+          <select id="org-type" name="orgType">
+            <option value="" disabled selected>Select type</option>
+            <option>City Government</option>
+            <option>County Government</option>
+            <option>State Agency</option>
+            <option>Port / Economic Development Authority</option>
+            <option>University or College</option>
+            <option>School District</option>
+            <option>Chamber of Commerce</option>
+            <option>Private Company</option>
+            <option>International Government</option>
+            <option>Nonprofit / Foundation</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="location">City / Region</label>
+          <input type="text" id="location" name="location" placeholder="e.g. Philadelphia, PA" />
+        </div>
+
+        <div class="form-section-title">Your Interest</div>
+        <div class="field">
+          <label for="partnership-type">Partnership Type Sought</label>
+          <select id="partnership-type" name="partnershipType">
+            <option value="" disabled selected>Select type</option>
+            <option>Sister City / Friendship City Arrangement</option>
+            <option>Trade Mission (Outbound)</option>
+            <option>Trade Mission (Inbound)</option>
+            <option>International Investment Attraction</option>
+            <option>Education Exchange Program</option>
+            <option>Memorandum of Understanding</option>
+            <option>General Economic Development Partnership</option>
+            <option>Not Sure — Want to Explore Options</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="target-region">Target Region / Country of Interest</label>
+          <input type="text" id="target-region" name="targetRegion" placeholder="e.g. China, Southeast Asia, Europe, Open to Suggestions" />
+        </div>
+        <div class="field">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div class="field">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" />
+        </div>
+        <div class="field">
+          <label for="message">Tell Us About Your Goals</label>
+          <textarea id="message" name="message" rows="5" placeholder="What are you trying to accomplish? What resources do you have? What's your timeline?"></textarea>
+        </div>
+        <button type="submit">Submit Expression of Interest →</button>
+        <div class="form-note">All submissions are treated as confidential. NCIC does not share inquiry information with third parties.</div>
+      </form>
+    </div>
+  </section>
+
+  <Footer />
+</Base>
+
+<style>
+.partner-hero{background:var(--navy);padding:80px 0;color:var(--offwhite);border-bottom:2px solid var(--gold);position:relative;overflow:hidden}
+.partner-hero::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(201,168,76,.06) 0%,transparent 60%);pointer-events:none}
+.partner-hero h1{font-size:clamp(32px,4vw,58px);color:var(--offwhite);margin-bottom:20px;font-weight:normal;line-height:1.1;position:relative}
+.partner-hero h1 em{font-style:normal;color:var(--gold)}
+.partner-hero .sub{font-family:'Arial',sans-serif;font-size:16px;color:#94A3B8;max-width:680px;line-height:1.8;position:relative}
+
+.offer{padding:80px 0;background:var(--offwhite)}
+.offer h2{font-size:clamp(28px,3vw,42px);color:var(--navy);margin-bottom:20px;font-weight:normal}
+.intro{font-family:'Arial',sans-serif;font-size:16px;color:var(--muted);max-width:640px;line-height:1.7;margin-bottom:56px}
+.offer-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--light)}
+.offer-item{background:var(--offwhite);padding:36px 32px}
+.offer-icon{font-size:20px;color:var(--gold);margin-bottom:16px;display:block}
+.offer-item h3{font-size:17px;color:var(--navy);margin-bottom:12px;font-weight:normal;line-height:1.3}
+.offer-item p{font-family:'Arial',sans-serif;font-size:13px;color:var(--muted);line-height:1.7}
+
+.region{background:var(--navy);padding:80px 0;color:var(--offwhite)}
+.region-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.region h2{font-size:clamp(28px,3vw,42px);color:var(--offwhite);margin-bottom:20px;font-weight:normal}
+.region p{font-family:'Arial',sans-serif;font-size:15px;color:#94A3B8;line-height:1.8;margin-bottom:24px}
+.region-cities{display:grid;grid-template-columns:1fr 1fr;gap:8px 24px;margin-bottom:24px}
+.region-city{font-family:'Arial',sans-serif;font-size:13px;color:#CBD5E0;display:flex;align-items:center;gap:8px}
+.region-city span{color:var(--gold);font-size:8px}
+.region-note{font-family:'Arial',sans-serif;font-size:12px;color:#64748B;line-height:1.6;font-style:italic}
+.region-image img{width:100%;display:block;opacity:.85}
+.img-caption{font-family:'Arial',sans-serif;font-size:11px;color:#475569;padding-top:10px;text-align:center;letter-spacing:.05em}
+
+.eoi{padding:80px 0;background:var(--light)}
+.eoi-inner{display:grid;grid-template-columns:1fr 1.6fr;gap:80px;align-items:start}
+.eoi-left h2{font-size:clamp(28px,3vw,40px);color:var(--navy);margin-bottom:20px;font-weight:normal}
+.eoi-left p{font-family:'Arial',sans-serif;font-size:15px;color:var(--muted);line-height:1.8;margin-bottom:16px}
+.eoi-types{margin-top:32px}
+.eoi-type-label{font-family:'Arial',sans-serif;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.eoi-type{font-family:'Arial',sans-serif;font-size:13px;color:var(--text);padding:8px 0;border-bottom:1px solid #D0C9BC;display:flex;align-items:center;gap:10px}
+.eoi-type::before{content:'→';color:var(--gold);font-size:11px}
+
+.eoi-form{display:flex;flex-direction:column;gap:16px;background:var(--offwhite);padding:40px}
+.form-section-title{font-family:'Arial',sans-serif;font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);padding-bottom:12px;border-bottom:1px solid var(--light);margin-top:8px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.field{display:flex;flex-direction:column;gap:6px}
+label{font-family:'Arial',sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+input,select,textarea{background:white;border:1px solid #D0C9BC;padding:14px 16px;font-family:'Arial',sans-serif;font-size:14px;color:var(--text);outline:none;transition:border-color .2s;width:100%}
+input:focus,select:focus,textarea:focus{border-color:var(--gold)}
+textarea{resize:vertical}
+button{background:var(--navy);color:var(--offwhite);border:none;padding:18px 32px;font-family:'Arial',sans-serif;font-size:11px;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;transition:background .2s}
+button:hover{background:var(--slate)}
+.form-note{font-family:'Arial',sans-serif;font-size:11px;color:var(--muted);line-height:1.6;font-style:italic}
+
+@media(max-width:1024px){.offer-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:900px){.region-inner,.eoi-inner{grid-template-columns:1fr;gap:48px}}
+@media(max-width:768px){.offer-grid{grid-template-columns:1fr}.form-row{grid-template-columns:1fr}.eoi-form{padding:24px}.partner-hero,.offer,.region,.eoi{padding:56px 0}}
+</style>
