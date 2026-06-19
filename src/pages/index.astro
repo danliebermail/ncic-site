@@ -176,10 +176,10 @@ import Footer from '../components/Footer.astro';
 <style>
 .photo-band{background:var(--navy);padding:48px 0;text-align:center}
 .pb-label{font-family:'Arial',sans-serif;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:24px}
-.pb-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:2px;margin-bottom:24px}
+.pb-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:3px;margin-bottom:24px}
 .pb-grid a{display:block;overflow:hidden}
 .pb-grid img{width:100%;height:160px;object-fit:cover;display:block;transition:opacity .2s}
 .pb-grid img:hover{opacity:.8}
 .pb-cta{font-family:'Arial',sans-serif;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:2px}
-@media(max-width:768px){.pb-grid{grid-template-columns:repeat(3,1fr)}.pb-grid img{height:100px}}
+@media(min-width:600px){.pb-grid{grid-template-columns:repeat(3,1fr)}} @media(min-width:900px){.pb-grid{grid-template-columns:repeat(6,1fr)}.pb-grid img{height:200px}}
 </style>
