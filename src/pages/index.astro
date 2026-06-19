@@ -248,3 +248,17 @@ import Footer from '../components/Footer.astro';
   .pb-grid img { height:260px; }
 }
 </style>
+
+<style>
+@media (min-width: 1024px) {
+  .hero { padding: 120px 0; }
+  .pb-grid { grid-template-columns: repeat(6,1fr); }
+  .pb-grid img { height: 280px; }
+  .pillars { grid-template-columns: repeat(3,1fr); }
+  .history-grid { grid-template-columns: 1fr 1fr; gap: 80px; }
+  .city-cards { grid-template-columns: 1fr 1fr; }
+  .why-grid { grid-template-columns: repeat(3,1fr); }
+  .partner-cta-inner { flex-direction: row; align-items: center; justify-content: space-between; }
+  .card-img { height: 260px; }
+}
+</style>
