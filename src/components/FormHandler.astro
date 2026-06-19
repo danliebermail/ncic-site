@@ -1,0 +1,67 @@
+<script>
+const EDGE_URL = 'https://avjndyyxqtwcyfoygmvv.supabase.co/functions/v1/ncic-lead';
+
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('form[data-ncic]').forEach(form => {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = form.querySelector('button[type="submit"]');
+      const originalText = btn.textContent;
+      btn.textContent = 'Sending...';
+      btn.disabled = true;
+
+      const formType = form.dataset.ncic;
+      const data = Object.fromEntries(new FormData(form));
+      data.form_type = formType;
+
+      try {
+        const res = await fetch(EDGE_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data),
+        });
+        const json = await res.json();
+        if (json.success) {
+          form.innerHTML = `
+            <div class="form-success">
+              <div class="success-icon">✓</div>
+              <h3>Thank you.</h3>
+              <p>We've received your submission and will be in touch within five business days.</p>
+            </div>
+          `;
+        } else {
+          throw new Error(json.error);
+        }
+      } catch (err) {
+        btn.textContent = originalText;
+        btn.disabled = false;
+        alert('Something went wrong. Please try again or email us directly.');
+      }
+    });
+  });
+});
+</script>
+
+<style is:global>
+.form-success {
+  text-align: center;
+  padding: 64px 32px;
+  background: var(--offwhite);
+}
+.success-icon {
+  font-size: 48px;
+  color: var(--gold);
+  margin-bottom: 16px;
+}
+.form-success h3 {
+  font-size: 28px;
+  color: var(--navy);
+  margin-bottom: 12px;
+  font-weight: normal;
+}
+.form-success p {
+  font-family: 'Arial', sans-serif;
+  font-size: 15px;
+  color: var(--muted);
+}
+</style>
