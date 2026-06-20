@@ -1,0 +1,132 @@
+---
+import Base from '../layouts/Base.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+
+const articles = [
+  {
+    date: 'June 2026',
+    category: 'NCIC Update',
+    title: 'NCIC Reactivates After Nearly a Decade — With a Sharper Mission',
+    excerpt: 'New Castle International Corp. is returning to the work it began in 2014 — building international economic partnerships for New Castle County and the wider Mid-Atlantic region. With new county leadership, a redesigned platform, and a clearer focus on education-first partnership development, NCIC is ready for its next chapter.',
+    featured: true,
+  },
+  {
+    date: 'June 2026',
+    category: 'Delaware Economy',
+    title: 'Delaware Exports $5.5 Billion in Goods in 2025 — Chemical Sector Leads',
+    excerpt: 'The US Trade Representative reports Delaware exported $5.5 billion in goods in 2025, with chemicals accounting for $1.6 billion — the state\'s single largest export category. The Philadelphia-Wilmington metropolitan area exported $29.1 billion in 2024, demonstrating the regional economy\'s global reach.',
+  },
+  {
+    date: 'April 2026',
+    category: 'Port of Wilmington',
+    title: 'State Audit Finds Oversight Gaps in Port of Wilmington Expansion — Work Continues',
+    excerpt: 'A December 2025 performance audit of the Diamond State Port Corporation found ongoing oversight challenges between DSPC and operator Enstructure. Despite procedural issues, the port expansion project continues — with Enstructure and the state advancing plans for the new Edgemoor container terminal facility.',
+  },
+  {
+    date: 'March 2026',
+    category: 'Education',
+    title: 'Ningbo Delegation Visits Wilmington to Explore Education Exchange',
+    excerpt: 'A delegation from Ningbo, China — including the Division Chief of Vocational Education for the Ningbo Municipal Education Bureau — visited Wilmington to explore educational exchange opportunities. Mayor Carney highlighted education as a priority area for the 36-year-old Wilmington-Ningbo Friendship City relationship.',
+  },
+  {
+    date: 'January 2025',
+    category: 'New Castle County',
+    title: 'Marcus Henry Takes Office as New Castle County Executive',
+    excerpt: 'Marcus Henry, former NCC Director of Economic Development from 2011 to 2021, was sworn in as County Executive in January 2025. Henry brings direct experience with the county\'s international economic development portfolio — including the NCC-Qiqihar sister city framework established during his tenure under County Executive Thomas Gordon.',
+  },
+  {
+    date: 'April 2023',
+    category: 'Delaware Education',
+    title: '$50 Million Maurice Pritchett Academy Opens in Wilmington',
+    excerpt: 'A new $50 million school bearing the name of legendary Bancroft School principal Maurice Pritchett Sr. opened in Wilmington with Governor Carney and Senator Coons in attendance. The Pritchett family\'s legacy in Delaware education continues through the Maurice Pritchett Education Foundation, led by Juanita Pritchett.',
+  },
+];
+---
+<Base title="News &amp; Insights — New Castle International Corp.">
+  <Nav />
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="section-label">News &amp; Insights</div>
+      <h1>Economic Development.<br><em>Regional Intelligence.</em></h1>
+      <p class="sub">NCIC tracks economic development news, trade policy, and partnership opportunities across New Castle County, Delaware, and our international partner cities. Stay informed on what's shaping the regional economy and the global partnerships that matter.</p>
+    </div>
+  </section>
+
+  <section class="news-section">
+    <div class="container">
+      {articles.map((article, i) => (
+        <article class={`news-item ${article.featured ? 'featured' : ''}`}>
+          <div class="news-meta">
+            <span class="news-cat">{article.category}</span>
+            <span class="news-date">{article.date}</span>
+          </div>
+          <h2 class="news-title">{article.title}</h2>
+          <p class="news-excerpt">{article.excerpt}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="newsletter-section">
+    <div class="container newsletter-inner">
+      <div>
+        <div class="section-label" style="color:var(--gold)">Stay Informed</div>
+        <h2>NCIC Intelligence Briefing</h2>
+        <p>Sign up to receive NCIC's periodic briefings on economic development news, trade opportunities, and partnership updates affecting New Castle County and our international relationships.</p>
+        <p>We don't spam. We send substantive updates when there's something worth saying.</p>
+      </div>
+      <form class="newsletter-form" data-ncic="newsletter">
+        <div class="field">
+          <label for="nl-name">Your Name</label>
+          <input type="text" id="nl-name" name="firstName" placeholder="First and last name" />
+        </div>
+        <div class="field">
+          <label for="nl-email">Email Address</label>
+          <input type="email" id="nl-email" name="email" required placeholder="your@email.com" />
+        </div>
+        <div class="field">
+          <label for="nl-org">Organization (optional)</label>
+          <input type="text" id="nl-org" name="organization" placeholder="City, company, or institution" />
+        </div>
+        <button type="submit">Subscribe →</button>
+      </form>
+    </div>
+  </section>
+
+  <Footer />
+</Base>
+
+<style>
+.page-hero{background:var(--navy);padding:80px 0;border-bottom:2px solid var(--gold);color:var(--offwhite)}
+.page-hero h1{font-size:clamp(28px,4vw,50px);font-weight:normal;margin-bottom:20px;line-height:1.1}
+.page-hero h1 em{font-style:normal;color:var(--gold)}
+.page-hero .sub{font-family:'Arial',sans-serif;font-size:15px;color:#94A3B8;max-width:660px;line-height:1.8}
+.news-section{padding:80px 0;background:var(--offwhite)}
+.news-item{padding:40px 0;border-bottom:1px solid var(--light)}
+.news-item:last-child{border-bottom:none}
+.news-item.featured{background:var(--navy);padding:40px;margin-bottom:2px;border-bottom:none}
+.news-item.featured .news-title{color:var(--offwhite)}
+.news-item.featured .news-excerpt{color:#94A3B8}
+.news-meta{display:flex;gap:16px;align-items:center;margin-bottom:12px}
+.news-cat{font-family:'Arial',sans-serif;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);background:rgba(201,168,76,.1);padding:4px 10px}
+.news-date{font-family:'Arial',sans-serif;font-size:11px;color:var(--muted);letter-spacing:.1em}
+.news-item.featured .news-date{color:#64748B}
+.news-title{font-size:clamp(18px,2.5vw,26px);color:var(--navy);margin-bottom:14px;font-weight:normal;line-height:1.3;max-width:800px}
+.news-excerpt{font-family:'Arial',sans-serif;font-size:15px;color:var(--muted);line-height:1.8;max-width:760px}
+.newsletter-section{padding:80px 0;background:var(--navy);color:var(--offwhite)}
+.newsletter-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.newsletter-section h2{font-size:clamp(24px,3vw,36px);color:var(--offwhite);margin-bottom:20px;font-weight:normal}
+.newsletter-section p{font-family:'Arial',sans-serif;font-size:15px;color:#94A3B8;line-height:1.8;margin-bottom:16px}
+.newsletter-form{display:flex;flex-direction:column;gap:16px}
+.field{display:flex;flex-direction:column;gap:6px}
+label{font-family:'Arial',sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#64748B}
+input{background:rgba(255,255,255,.06);border:1px solid rgba(201,168,76,.3);padding:14px 16px;font-family:'Arial',sans-serif;font-size:14px;color:var(--offwhite);outline:none;transition:border-color .2s}
+input:focus{border-color:var(--gold)}
+input::placeholder{color:#475569}
+button{background:var(--gold);color:var(--navy);border:none;padding:16px 32px;font-family:'Arial',sans-serif;font-size:11px;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;font-weight:bold;transition:background .2s;align-self:flex-start}
+button:hover{background:#E0BC6A}
+@media(max-width:900px){.newsletter-inner{grid-template-columns:1fr;gap:48px}}
+@media(max-width:768px){.page-hero,.news-section,.newsletter-section{padding:56px 0}.news-item.featured{padding:28px}}
+</style>

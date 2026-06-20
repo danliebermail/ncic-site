@@ -1,10 +1,5 @@
 ---
-const links = [
-  { href: '/', label: 'Home' },
-  { href: '/our-work', label: 'Our Work' },
-  { href: '/partner', label: 'Partner With Us' },
-  { href: '/contact', label: 'Contact' },
-];
+const currentPath = Astro.url.pathname;
 ---
 
 <nav>
@@ -12,11 +7,30 @@ const links = [
     New Castle International Corp.
     <span>Est. 2014 · Wilmington, Delaware</span>
   </a>
+
   <ul class="nav-links" id="nav-links">
-    {links.map(link => (
-      <li><a href={link.href}>{link.label}</a></li>
-    ))}
+    <li><a href="/about" class:list={[{active: currentPath.startsWith('/about')}]}>About</a></li>
+    <li class="has-dropdown">
+      <a href="/region">The Region</a>
+      <ul class="dropdown">
+        <li><a href="/region">Overview</a></li>
+        <li><a href="/industries">Industries</a></li>
+        <li><a href="/education">Education</a></li>
+        <li><a href="/arts">Arts &amp; Culture</a></li>
+      </ul>
+    </li>
+    <li class="has-dropdown">
+      <a href="/our-work">Partnerships</a>
+      <ul class="dropdown">
+        <li><a href="/qiqihar">Qiqihar, China</a></li>
+        <li><a href="/our-work">Our Work</a></li>
+        <li><a href="/partner">Partner With Us</a></li>
+      </ul>
+    </li>
+    <li><a href="/news">News &amp; Insights</a></li>
+    <li><a href="/contact">Contact</a></li>
   </ul>
+
   <button class="nav-toggle" id="nav-toggle" aria-label="Menu">☰</button>
 </nav>
 
@@ -25,14 +39,14 @@ const links = [
   const links = document.getElementById('nav-links');
   toggle?.addEventListener('click', () => {
     links?.classList.toggle('open');
-    toggle.textContent = links?.classList.contains('open') ? '✕' : '☰';
+    if (toggle) toggle.textContent = links?.classList.contains('open') ? '✕' : '☰';
   });
 </script>
 
 <style>
 nav {
   background: var(--navy);
-  padding: 0 24px;
+  padding: 0 32px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -42,7 +56,6 @@ nav {
   z-index: 100;
   border-bottom: 2px solid var(--gold);
 }
-
 .nav-logo {
   font-family: 'Georgia', serif;
   font-size: 12px;
@@ -51,35 +64,51 @@ nav {
   color: var(--offwhite);
   text-decoration: none;
   flex-shrink: 0;
-  line-height: 1.2;
+  line-height: 1.3;
 }
-
-.nav-logo span {
-  color: var(--gold);
-  display: block;
-  font-size: 9px;
-  letter-spacing: .2em;
-  margin-top: 2px;
-}
-
-.nav-links {
-  display: flex;
-  gap: 32px;
-  list-style: none;
-}
-
-.nav-links a {
+.nav-logo span { color: var(--gold); display: block; font-size: 9px; letter-spacing: .2em; margin-top: 2px; }
+.nav-links { display: flex; gap: 4px; list-style: none; align-items: center; }
+.nav-links > li { position: relative; }
+.nav-links > li > a {
   color: #CBD5E0;
   text-decoration: none;
   font-family: 'Arial', sans-serif;
   font-size: 11px;
-  letter-spacing: .15em;
+  letter-spacing: .12em;
   text-transform: uppercase;
+  padding: 8px 12px;
+  display: block;
   transition: color .2s;
+  white-space: nowrap;
 }
-
-.nav-links a:hover { color: var(--gold); }
-
+.nav-links > li > a:hover,
+.nav-links > li > a.active { color: var(--gold); }
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: var(--navy);
+  border: 1px solid rgba(201,168,76,.3);
+  border-top: 2px solid var(--gold);
+  list-style: none;
+  min-width: 180px;
+  z-index: 200;
+}
+.has-dropdown:hover .dropdown { display: block; }
+.dropdown li a {
+  display: block;
+  padding: 12px 16px;
+  color: #94A3B8;
+  text-decoration: none;
+  font-family: 'Arial', sans-serif;
+  font-size: 11px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(255,255,255,.05);
+  transition: color .2s, background .2s;
+}
+.dropdown li a:hover { color: var(--gold); background: rgba(201,168,76,.05); }
 .nav-toggle {
   display: none;
   background: none;
@@ -90,37 +119,28 @@ nav {
   height: 36px;
   cursor: pointer;
   flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
 }
-
-@media (max-width: 768px) {
-  .nav-links {
-    display: none;
+@media (max-width: 900px) {
+  .nav-links { display: none; }
+  .nav-links.open {
+    display: flex;
+    flex-direction: column;
     position: absolute;
     top: 64px;
     left: 0;
     right: 0;
     background: var(--navy);
-    flex-direction: column;
-    gap: 0;
     border-top: 1px solid var(--gold);
+    gap: 0;
     z-index: 99;
+    max-height: 80vh;
+    overflow-y: auto;
   }
-
-  .nav-links.open {
-    display: flex;
-  }
-
-  .nav-links li a {
-    display: block;
-    padding: 18px 24px;
-    border-bottom: 1px solid rgba(201,168,76,.2);
-    font-size: 13px;
-  }
-
-  .nav-toggle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+  .nav-links.open > li > a { padding: 16px 24px; border-bottom: 1px solid rgba(255,255,255,.05); }
+  .dropdown { display: block; position: static; border: none; border-top: none; background: rgba(0,0,0,.2); }
+  .dropdown li a { padding: 12px 36px; }
+  .nav-toggle { display: flex; }
 }
 </style>
