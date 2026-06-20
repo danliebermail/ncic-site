@@ -6,135 +6,197 @@ import Footer from '../components/Footer.astro';
 <Base title="The Region — New Castle International Corp.">
   <Nav />
 
-  <section class="page-hero" style="background-image:linear-gradient(to bottom,rgba(13,31,60,.75),rgba(13,31,60,.95)),url('/images/wilmington-aerial.png');background-size:cover;background-position:center">
-    <div class="container">
+  <!-- HERO: Split screen — city photo left, text right -->
+  <section class="region-hero">
+    <div class="rh-image">
+      <img src="/images/wilmington-waterfront.png" alt="Wilmington Delaware waterfront" />
+      <div class="rh-image-caption">Wilmington, Delaware · On the Christina River</div>
+    </div>
+    <div class="rh-content">
       <div class="section-label">The Region</div>
-      <h1>New Castle County &amp;<br>the <em>Mid-Atlantic Corridor</em></h1>
-      <p class="sub">NCIC represents one of the most economically powerful, educationally rich, and culturally significant regions in the United States — a 90-mile corridor between New York City and Washington D.C. that punches far above its weight on the global stage.</p>
+      <h1>New Castle County<br>&amp; the Mid-Atlantic<br><em>Corridor</em></h1>
+      <p>Between New York City and Washington D.C. sits one of the most economically powerful, educationally rich, and culturally significant regions in the United States. NCIC represents this region to the world.</p>
+      <div class="rh-quick-facts">
+        <div class="rh-fact"><em>$29.1B</em> Metro export value (2024)</div>
+        <div class="rh-fact"><em>50M</em> Consumers within 4 hours</div>
+        <div class="rh-fact"><em>60%+</em> Fortune 500 incorporated here</div>
+      </div>
     </div>
   </section>
 
-  <section class="region-stats">
-    <div class="container stats-grid">
-      <div class="stat-card"><span class="snum">$29.1B</span><span class="slbl">Metro Export Value (2024)</span></div>
-      <div class="stat-card"><span class="snum">$5.5B</span><span class="slbl">Delaware Goods Exports (2025)</span></div>
-      <div class="stat-card"><span class="snum">36K</span><span class="slbl">Foreign-Employed Delaware Workers</span></div>
-      <div class="stat-card"><span class="snum">&gt;60%</span><span class="slbl">NYSE Companies Incorporated in DE</span></div>
-      <div class="stat-card"><span class="snum">$103B</span><span class="slbl">Delaware State GDP (2024)</span></div>
-      <div class="stat-card"><span class="snum">#1</span><span class="slbl">Most Business-Friendly State, USA</span></div>
+  <!-- ECONOMY STRIP: Horizontal bar of key economic figures, non-AI style -->
+  <section class="economy-strip">
+    <div class="es-inner">
+      <div class="es-block">
+        <div class="es-figure">$5.5B</div>
+        <div class="es-line"></div>
+        <div class="es-label">Delaware goods<br>exported in 2025</div>
+      </div>
+      <div class="es-divider"></div>
+      <div class="es-block">
+        <div class="es-figure">$1.6B</div>
+        <div class="es-line"></div>
+        <div class="es-label">Chemical exports —<br>Delaware's largest category</div>
+      </div>
+      <div class="es-divider"></div>
+      <div class="es-block">
+        <div class="es-figure">$103B</div>
+        <div class="es-line"></div>
+        <div class="es-label">Delaware<br>state GDP (2024)</div>
+      </div>
+      <div class="es-divider"></div>
+      <div class="es-block">
+        <div class="es-figure">36K</div>
+        <div class="es-line"></div>
+        <div class="es-label">Delaware workers employed<br>by foreign companies</div>
+      </div>
+      <div class="es-divider"></div>
+      <div class="es-block">
+        <div class="es-figure">1M+</div>
+        <div class="es-line"></div>
+        <div class="es-label">Business entities<br>domiciled in Delaware</div>
+      </div>
     </div>
   </section>
 
+  <!-- WHY THIS REGION -->
   <section class="why-region">
-    <div class="container two-col">
-      <div>
-        <div class="section-label">Why This Region</div>
-        <h2>The Center of Everything</h2>
-        <p>New Castle County sits at the geographic heart of the Northeast Megalopolis — the most densely populated and economically productive urban corridor in the Western Hemisphere. Within a 90-minute drive: New York City, Philadelphia, Baltimore, and Washington D.C.</p>
-        <p>This isn't just geography. It's access to 50 million consumers, the world's largest financial markets, the US federal government, and the most concentrated cluster of Fortune 500 companies outside of Silicon Valley.</p>
-        <p>For international investors, companies, and governments looking for a foothold in the American market, New Castle County offers something unique: the infrastructure and connectivity of a major metro area, with the business-friendly legal environment, lower costs, and government accessibility of a small state.</p>
-        <p>Delaware's liberal incorporation law — in effect since 1899 — has made it the legal home of more than 60% of Fortune 500 companies. The state's corporate infrastructure, combined with NCC's strategic position and the Port of Wilmington, makes this region uniquely positioned for international partnership.</p>
-      </div>
-      <div>
-        <img src="/images/world-map.png" alt="Delaware to China — global corridor" style="width:100%;margin-bottom:3px;display:block" />
-        <img src="/images/wilmington-waterfront.png" alt="Wilmington waterfront" style="width:100%;display:block;height:200px;object-fit:cover" />
-      </div>
-    </div>
-  </section>
-
-  <section class="sectors-band">
     <div class="container">
-      <div class="section-label">Key Sectors</div>
-      <h2>What New Castle County Does Best</h2>
-      <div class="sectors-grid">
-        <a href="/industries#lifesciences" class="sector-card">
-          <div class="sector-icon">⬡</div>
-          <h3>Life Sciences</h3>
-          <p>AstraZeneca, DuPont, ILC Dover, and Agilent anchor a world-class life sciences cluster spanning pharmaceuticals, biotech, advanced materials, and medical devices.</p>
-          <span class="sector-link">Explore →</span>
-        </a>
-        <a href="/industries#manufacturing" class="sector-card">
-          <div class="sector-icon">⬡</div>
-          <h3>Advanced Manufacturing</h3>
-          <p>21,740 manufacturing workers in NCC alone. Transportation equipment exports valued at nearly $900M including aerospace parts, aircraft components, and automotive materials.</p>
-          <span class="sector-link">Explore →</span>
-        </a>
-        <a href="/industries#chemicals" class="sector-card">
-          <div class="sector-icon">⬡</div>
-          <h3>Chemicals &amp; Pharma</h3>
-          <p>Wilmington is the administrative and research capital of the global chemical industry. $1.6 billion in chemical exports in 2025 — Delaware's single largest export category.</p>
-          <span class="sector-link">Explore →</span>
-        </a>
-        <a href="/industries#financial" class="sector-card">
-          <div class="sector-icon">⬡</div>
-          <h3>Financial Services</h3>
-          <p>Delaware's corporation-friendly legal system makes it the domicile of choice for American and international businesses. Major banking and financial services hub.</p>
-          <span class="sector-link">Explore →</span>
-        </a>
-        <a href="/industries#logistics" class="sector-card">
-          <div class="sector-icon">⬡</div>
-          <h3>Logistics &amp; Port</h3>
-          <p>The Port of Wilmington — currently under expansion — provides direct Atlantic access and connects to major rail and highway networks serving the entire Northeast corridor.</p>
-          <span class="sector-link">Explore →</span>
-        </a>
-        <a href="/industries#food" class="sector-card">
-          <div class="sector-icon">⬡</div>
-          <h3>Food &amp; Agriculture</h3>
-          <p>Delaware's food processing industry employs 29% of the state's industrial workers. $364M in agricultural exports in 2024. A natural partner for Qiqihar's organic food sector.</p>
-          <span class="sector-link">Explore →</span>
-        </a>
+      <div class="wr-grid">
+        <div class="wr-text">
+          <div class="section-label">Why This Region</div>
+          <h2>The Center of<br>Everything</h2>
+          <p>New Castle County sits at the geographic heart of the Northeast Megalopolis — the most densely populated and economically productive urban corridor in the Western Hemisphere. Within a 90-minute drive: New York City, Philadelphia, Baltimore, and Washington D.C.</p>
+          <p>For international investors, companies, and governments looking for a foothold in the American market, New Castle County offers something unique — the infrastructure and connectivity of a major metro area, with the business-friendly legal environment and government accessibility of a small state.</p>
+          <p>Delaware's liberal incorporation law has made it the legal home of more than 60% of Fortune 500 companies. The state's corporate infrastructure, combined with the Port of Wilmington and the Philadelphia-Wilmington metro's export network, makes this region uniquely positioned for international partnership.</p>
+          <a href="/partner" class="text-cta">Explore Partnership Opportunities →</a>
+        </div>
+        <div class="wr-visual">
+          <div class="city-photo-stack">
+            <img src="/images/wilmington-downtown.png" alt="Wilmington downtown skyline" class="stack-main" />
+            <img src="/images/wilmington-waterfront-2.png" alt="Wilmington riverfront" class="stack-secondary" />
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="corridor">
+  <!-- CORRIDOR: Distance markers, editorial style -->
+  <section class="corridor-section">
     <div class="container">
       <div class="section-label">Geographic Position</div>
-      <h2>The Mid-Atlantic Advantage</h2>
-      <div class="corridor-grid">
-        <div class="corridor-item">
-          <h4>New York City</h4>
-          <span class="distance">~90 min</span>
-          <p>World's largest financial center, global media capital, major port. Direct Amtrak and I-95 access.</p>
-        </div>
-        <div class="corridor-item">
-          <h4>Philadelphia</h4>
-          <span class="distance">~25 min</span>
-          <p>5th largest US city. Major education, healthcare, and manufacturing hub. Philadelphia International Airport.</p>
-        </div>
-        <div class="corridor-item">
-          <h4>Baltimore</h4>
-          <span class="distance">~60 min</span>
-          <p>Major East Coast port. Johns Hopkins, University of Maryland. Federal government contractor hub.</p>
-        </div>
-        <div class="corridor-item">
-          <h4>Washington D.C.</h4>
-          <span class="distance">~90 min</span>
-          <p>US federal government, World Bank, IMF, foreign embassies. Policy and regulatory access.</p>
+      <h2>Wilmington at the Center</h2>
+      <div class="corridor-visual">
+        <div class="cv-line"></div>
+        <div class="cv-stops">
+          <div class="cv-stop">
+            <div class="cv-dot"></div>
+            <div class="cv-city">New York City</div>
+            <div class="cv-time">~90 min</div>
+            <div class="cv-desc">World's largest financial center. Major port. Global media capital.</div>
+          </div>
+          <div class="cv-stop">
+            <div class="cv-dot"></div>
+            <div class="cv-city">Philadelphia</div>
+            <div class="cv-time">~25 min</div>
+            <div class="cv-desc">5th largest US city. Major education, healthcare, and manufacturing hub.</div>
+          </div>
+          <div class="cv-stop anchor">
+            <div class="cv-dot anchor-dot"></div>
+            <div class="cv-city">Wilmington / NCC</div>
+            <div class="cv-time">Home</div>
+            <div class="cv-desc">Port access. World-class university. Business capital of the US.</div>
+          </div>
+          <div class="cv-stop">
+            <div class="cv-dot"></div>
+            <div class="cv-city">Baltimore</div>
+            <div class="cv-time">~60 min</div>
+            <div class="cv-desc">Major East Coast port. Johns Hopkins. Federal contractor hub.</div>
+          </div>
+          <div class="cv-stop">
+            <div class="cv-dot"></div>
+            <div class="cv-city">Washington D.C.</div>
+            <div class="cv-time">~90 min</div>
+            <div class="cv-desc">US federal government, World Bank, IMF, foreign embassies.</div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="region-links">
-    <div class="container rlinks-grid">
-      <a href="/education" class="rlink-card">
-        <div class="rlink-icon">📚</div>
-        <h3>Education</h3>
-        <p>University of Delaware, Wilmington University, Del Tech — plus Penn, Drexel, Temple within 30 miles.</p>
-        <span>Explore Education →</span>
+  <!-- SECTORS -->
+  <section class="sectors-section">
+    <div class="container">
+      <div class="section-label">Key Sectors</div>
+      <h2>What New Castle County<br>Does Best</h2>
+      <div class="sectors-list">
+        <a href="/industries#lifesciences" class="sector-row">
+          <span class="sr-num">01</span>
+          <span class="sr-name">Life Sciences</span>
+          <span class="sr-companies">AstraZeneca · DuPont · ILC Dover · Agilent</span>
+          <span class="sr-arrow">→</span>
+        </a>
+        <a href="/industries#manufacturing" class="sector-row">
+          <span class="sr-num">02</span>
+          <span class="sr-name">Advanced Manufacturing</span>
+          <span class="sr-companies">21,740 workers · $900M in transport equipment exports</span>
+          <span class="sr-arrow">→</span>
+        </a>
+        <a href="/industries#chemicals" class="sector-row">
+          <span class="sr-num">03</span>
+          <span class="sr-name">Chemicals &amp; Pharma</span>
+          <span class="sr-companies">$1.6B exports · Chemical capital of the world</span>
+          <span class="sr-arrow">→</span>
+        </a>
+        <a href="/industries#financial" class="sector-row">
+          <span class="sr-num">04</span>
+          <span class="sr-name">Financial Services</span>
+          <span class="sr-companies">60%+ Fortune 500 incorporated · EB-5 investor pathway</span>
+          <span class="sr-arrow">→</span>
+        </a>
+        <a href="/industries#logistics" class="sector-row">
+          <span class="sr-num">05</span>
+          <span class="sr-name">Logistics &amp; Port</span>
+          <span class="sr-companies">Port of Wilmington · 65 miles from Atlantic · I-95 direct</span>
+          <span class="sr-arrow">→</span>
+        </a>
+        <a href="/industries#food" class="sector-row">
+          <span class="sr-num">06</span>
+          <span class="sr-name">Food &amp; Agriculture</span>
+          <span class="sr-companies">29% of industrial jobs · $364M agricultural exports</span>
+          <span class="sr-arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHOTO BAND -->
+  <section class="region-photo-band">
+    <img src="/images/gallery/delegation-dinner.jpg" alt="Delaware-China delegation" class="rpb-img" />
+    <img src="/images/wilmington-waterfront.png" alt="Wilmington waterfront" class="rpb-img" />
+    <img src="/images/gallery/boardroom-full.jpg" alt="Economic development meeting" class="rpb-img" />
+  </section>
+
+  <!-- EXPLORE MORE -->
+  <section class="explore-section">
+    <div class="container explore-grid">
+      <a href="/education" class="explore-card">
+        <div class="ec-label">Education</div>
+        <h3>40+ Universities<br>Within 90 Minutes</h3>
+        <p>University of Delaware, Wilmington University, Del Tech — plus Penn, Drexel, Temple, and Villanova within 30 miles. The most concentrated education corridor in the US.</p>
+        <span class="ec-link">Explore Education →</span>
       </a>
-      <a href="/arts" class="rlink-card">
-        <div class="rlink-icon">🎨</div>
-        <h3>Arts &amp; Culture</h3>
-        <p>The Brandywine School, Delaware Art Museum, Winterthur, Hagley. World-class cultural infrastructure.</p>
-        <span>Explore Arts →</span>
+      <a href="/arts" class="explore-card">
+        <div class="ec-label">Arts &amp; Culture</div>
+        <h3>The Brandywine<br>School &amp; Beyond</h3>
+        <p>Howard Pyle, N.C. Wyeth, Maxfield Parrish — all from Wilmington. The Delaware Art Museum, Winterthur, Hagley, and the Brandywine River Museum define the region's cultural legacy.</p>
+        <span class="ec-link">Explore Arts →</span>
       </a>
-      <a href="/partner" class="rlink-card">
-        <div class="rlink-icon">🌐</div>
-        <h3>Partner With Us</h3>
-        <p>Is your city or institution interested in what this region has to offer? Start the conversation.</p>
-        <span>Get in Touch →</span>
+      <a href="/qiqihar" class="explore-card">
+        <div class="ec-label">Qiqihar, China</div>
+        <h3>Our Partner City<br>Since 2014</h3>
+        <p>The only county-level US-China sister city agreement in Delaware — built by NCIC. We're ready to reactivate. Organic food, heavy machinery, and education exchange are all on the table.</p>
+        <span class="ec-link">Learn About Qiqihar →</span>
       </a>
     </div>
   </section>
@@ -143,45 +205,246 @@ import Footer from '../components/Footer.astro';
 </Base>
 
 <style>
-.page-hero{padding:80px 0;border-bottom:2px solid var(--gold);color:var(--offwhite)}
-.page-hero h1{font-size:clamp(28px,4vw,52px);font-weight:normal;margin-bottom:20px;line-height:1.1}
-.page-hero h1 em{font-style:normal;color:var(--gold)}
-.page-hero .sub{font-family:'Arial',sans-serif;font-size:15px;color:#94A3B8;max-width:660px;line-height:1.8}
-.region-stats{background:var(--navy);padding:48px 0}
-.stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:rgba(255,255,255,.05)}
-.stat-card{background:var(--navy);padding:32px 24px;text-align:center;border:1px solid rgba(201,168,76,.1)}
-.snum{display:block;font-size:clamp(24px,3vw,36px);color:var(--gold);margin-bottom:8px}
-.slbl{font-family:'Arial',sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#64748B}
-.why-region{padding:80px 0;background:var(--offwhite)}
-.two-col{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
-.why-region h2{font-size:clamp(24px,3vw,36px);color:var(--navy);margin-bottom:24px;font-weight:normal}
-.why-region p{font-family:'Arial',sans-serif;font-size:15px;color:var(--muted);line-height:1.8;margin-bottom:16px}
-.sectors-band{padding:80px 0;background:var(--light)}
-.sectors-band h2{font-size:clamp(24px,3vw,36px);color:var(--navy);margin-bottom:40px;font-weight:normal}
-.sectors-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:#D0C9BC}
-.sector-card{background:var(--offwhite);padding:32px;text-decoration:none;display:block;transition:background .2s}
-.sector-card:hover{background:var(--navy)}
-.sector-card:hover h3,.sector-card:hover p,.sector-card:hover .sector-link{color:var(--offwhite)}
-.sector-icon{font-size:24px;margin-bottom:16px;display:block;color:var(--gold)}
-.sector-card h3{font-size:18px;color:var(--navy);margin-bottom:10px;font-weight:normal;transition:color .2s}
-.sector-card p{font-family:'Arial',sans-serif;font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:16px;transition:color .2s}
-.sector-link{font-family:'Arial',sans-serif;font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--gold)}
-.corridor{padding:80px 0;background:var(--navy);color:var(--offwhite)}
-.corridor h2{font-size:clamp(24px,3vw,36px);color:var(--offwhite);margin-bottom:40px;font-weight:normal}
-.corridor-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px}
-.corridor-item{border-top:2px solid var(--gold);padding-top:24px}
-.corridor-item h4{font-size:17px;color:var(--offwhite);margin-bottom:8px;font-weight:normal}
-.distance{font-family:'Arial',sans-serif;font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:12px}
-.corridor-item p{font-family:'Arial',sans-serif;font-size:13px;color:#94A3B8;line-height:1.7}
-.region-links{padding:80px 0;background:var(--offwhite)}
-.rlinks-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--light)}
-.rlink-card{background:var(--offwhite);padding:40px 32px;text-decoration:none;display:block;transition:background .2s}
-.rlink-card:hover{background:var(--navy)}
-.rlink-card:hover h3,.rlink-card:hover p,.rlink-card:hover span{color:var(--offwhite)}
-.rlink-icon{font-size:32px;display:block;margin-bottom:16px}
-.rlink-card h3{font-size:20px;color:var(--navy);margin-bottom:12px;font-weight:normal;transition:color .2s}
-.rlink-card p{font-family:'Arial',sans-serif;font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:20px;transition:color .2s}
-.rlink-card span{font-family:'Arial',sans-serif;font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--gold)}
-@media(max-width:900px){.stats-grid,.sectors-grid,.rlinks-grid{grid-template-columns:repeat(2,1fr)}.corridor-grid{grid-template-columns:repeat(2,1fr)}.two-col{grid-template-columns:1fr;gap:40px}}
-@media(max-width:600px){.stats-grid,.sectors-grid,.corridor-grid,.rlinks-grid{grid-template-columns:1fr}}
+/* HERO — split screen */
+.region-hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 520px;
+  border-bottom: 2px solid var(--gold);
+}
+.rh-image {
+  position: relative;
+  overflow: hidden;
+}
+.rh-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.rh-image-caption {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  font-family: 'Arial', sans-serif;
+  font-size: 10px;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.6);
+  background: rgba(13,31,60,.6);
+  padding: 6px 10px;
+}
+.rh-content {
+  background: var(--navy);
+  padding: 64px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: var(--offwhite);
+}
+.rh-content h1 {
+  font-size: clamp(28px, 3.5vw, 48px);
+  font-weight: normal;
+  margin-bottom: 20px;
+  line-height: 1.1;
+}
+.rh-content h1 em { font-style: normal; color: var(--gold); }
+.rh-content p {
+  font-family: 'Arial', sans-serif;
+  font-size: 14px;
+  color: #94A3B8;
+  line-height: 1.8;
+  margin-bottom: 32px;
+  max-width: 440px;
+}
+.rh-quick-facts {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  border-top: 1px solid rgba(201,168,76,.2);
+  padding-top: 28px;
+}
+.rh-fact {
+  font-family: 'Arial', sans-serif;
+  font-size: 13px;
+  color: #64748B;
+}
+.rh-fact em {
+  font-style: normal;
+  color: var(--gold);
+  font-size: 18px;
+  margin-right: 8px;
+}
+
+/* ECONOMY STRIP — horizontal editorial bar */
+.economy-strip {
+  background: var(--offwhite);
+  border-bottom: 1px solid var(--light);
+  overflow-x: auto;
+}
+.es-inner {
+  display: flex;
+  align-items: stretch;
+  padding: 48px;
+  gap: 0;
+  min-width: 700px;
+}
+.es-block {
+  flex: 1;
+  padding: 0 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.es-block:first-child { padding-left: 0; }
+.es-block:last-child { padding-right: 0; }
+.es-figure {
+  font-family: 'Georgia', serif;
+  font-size: clamp(28px, 3vw, 44px);
+  color: var(--navy);
+  line-height: 1;
+}
+.es-line {
+  width: 32px;
+  height: 2px;
+  background: var(--gold);
+}
+.es-label {
+  font-family: 'Arial', sans-serif;
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+.es-divider {
+  width: 1px;
+  background: var(--light);
+  flex-shrink: 0;
+}
+
+/* WHY REGION */
+.why-region { padding: 80px 0; background: var(--light); }
+.wr-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+.wr-text h2 { font-size: clamp(28px, 3vw, 42px); color: var(--navy); margin-bottom: 24px; font-weight: normal; line-height: 1.2; }
+.wr-text p { font-family: 'Arial', sans-serif; font-size: 15px; color: var(--muted); line-height: 1.8; margin-bottom: 16px; }
+.text-cta { font-family: 'Arial', sans-serif; font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: var(--navy); text-decoration: none; border-bottom: 1px solid var(--navy); padding-bottom: 2px; display: inline-block; margin-top: 16px; }
+.city-photo-stack { display: flex; flex-direction: column; gap: 3px; }
+.stack-main { width: 100%; height: 280px; object-fit: cover; display: block; }
+.stack-secondary { width: 100%; height: 160px; object-fit: cover; display: block; }
+
+/* CORRIDOR */
+.corridor-section { padding: 80px 0; background: var(--navy); color: var(--offwhite); }
+.corridor-section h2 { font-size: clamp(24px, 3vw, 38px); color: var(--offwhite); margin-bottom: 56px; font-weight: normal; }
+.corridor-visual { position: relative; }
+.cv-line {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(201,168,76,.3) 10%, rgba(201,168,76,.3) 90%, transparent);
+}
+.cv-stops {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  z-index: 1;
+}
+.cv-stop {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex: 1;
+  padding: 0 8px;
+}
+.cv-dot {
+  width: 12px;
+  height: 12px;
+  border: 2px solid rgba(201,168,76,.5);
+  border-radius: 50%;
+  background: var(--navy);
+  margin-bottom: 20px;
+  flex-shrink: 0;
+}
+.anchor-dot {
+  width: 18px;
+  height: 18px;
+  background: var(--gold);
+  border-color: var(--gold);
+  margin-bottom: 17px;
+}
+.cv-city { font-family: 'Georgia', serif; font-size: 14px; color: var(--offwhite); margin-bottom: 6px; }
+.cv-stop.anchor .cv-city { color: var(--gold); font-size: 15px; }
+.cv-time { font-family: 'Arial', sans-serif; font-size: 10px; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+.cv-stop.anchor .cv-time { color: rgba(201,168,76,.6); }
+.cv-desc { font-family: 'Arial', sans-serif; font-size: 11px; color: #475569; line-height: 1.6; max-width: 130px; }
+
+/* SECTORS — editorial list style */
+.sectors-section { padding: 80px 0; background: var(--offwhite); }
+.sectors-section h2 { font-size: clamp(24px, 3vw, 38px); color: var(--navy); margin-bottom: 48px; font-weight: normal; line-height: 1.2; }
+.sectors-list { display: flex; flex-direction: column; }
+.sector-row {
+  display: grid;
+  grid-template-columns: 48px 1fr 1fr auto;
+  gap: 24px;
+  padding: 24px 0;
+  border-top: 1px solid var(--light);
+  text-decoration: none;
+  align-items: center;
+  transition: background .15s;
+}
+.sector-row:last-child { border-bottom: 1px solid var(--light); }
+.sector-row:hover { background: var(--light); padding-left: 16px; padding-right: 16px; margin: 0 -16px; }
+.sr-num { font-family: 'Arial', sans-serif; font-size: 11px; letter-spacing: .15em; color: var(--gold); }
+.sr-name { font-family: 'Georgia', serif; font-size: 18px; color: var(--navy); }
+.sr-companies { font-family: 'Arial', sans-serif; font-size: 12px; color: var(--muted); letter-spacing: .03em; }
+.sr-arrow { font-size: 18px; color: var(--gold); }
+
+/* PHOTO BAND */
+.region-photo-band {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3px;
+  background: var(--navy);
+}
+.rpb-img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  display: block;
+  filter: brightness(.85);
+  transition: filter .3s;
+}
+.rpb-img:hover { filter: brightness(1); }
+
+/* EXPLORE */
+.explore-section { padding: 80px 0; background: var(--light); }
+.explore-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: #D0C9BC; }
+.explore-card { background: var(--offwhite); padding: 40px 32px; text-decoration: none; display: block; transition: background .2s; }
+.explore-card:hover { background: var(--navy); }
+.explore-card:hover h3, .explore-card:hover p, .explore-card:hover .ec-link { color: var(--offwhite); }
+.ec-label { font-family: 'Arial', sans-serif; font-size: 10px; letter-spacing: .25em; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; display: block; }
+.explore-card h3 { font-size: 20px; color: var(--navy); margin-bottom: 16px; font-weight: normal; line-height: 1.3; transition: color .2s; }
+.explore-card p { font-family: 'Arial', sans-serif; font-size: 13px; color: var(--muted); line-height: 1.7; margin-bottom: 24px; transition: color .2s; }
+.ec-link { font-family: 'Arial', sans-serif; font-size: 11px; letter-spacing: .15em; text-transform: uppercase; color: var(--gold); }
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .region-hero { grid-template-columns: 1fr; }
+  .rh-image { height: 280px; }
+  .wr-grid { grid-template-columns: 1fr; gap: 40px; }
+  .cv-stops { flex-wrap: wrap; gap: 32px; justify-content: center; }
+  .cv-line { display: none; }
+  .cv-stop { width: 45%; }
+  .sector-row { grid-template-columns: 40px 1fr auto; }
+  .sr-companies { display: none; }
+  .region-photo-band { grid-template-columns: 1fr; }
+  .rpb-img { height: 200px; }
+  .explore-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 768px) {
+  .why-region, .corridor-section, .sectors-section, .explore-section { padding: 56px 0; }
+  .rh-content { padding: 40px 24px; }
+  .es-inner { padding: 32px 24px; }
+}
 </style>
